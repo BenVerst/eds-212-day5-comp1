@@ -1,5 +1,40 @@
 ---
 title: "eds-212-day5-comp1"
+format: 
+  html:
+    code-fold: true
+    code-summary: "show me the code"
+editor: visual
+execute:
+  echo: false
+  warning: false
 ---
 
-## 
+```{r}
+library(tidyverse)
+```
+
+## Explore starwars dataset
+
+-   look at the first 6 lines of starwars
+
+-   find the dimensions of starwars
+
+-   make a histogram of character heights
+
+-   make a scatterplot of height vs weight
+
+```{r}
+
+dim(starwars)
+
+head(starwars)
+```
+
+```{r}
+ggplot(data = starwars, aes(x = height)) + geom_histogram(fill = "black", color = "yellow") + theme_minimal()
+```
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass)) + geom_point(color = "black") + theme_minimal()
+```
